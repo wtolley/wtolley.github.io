@@ -1,0 +1,55 @@
+/* Mobile Styles */
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    background-color: #1E1B2E;
+    color: #bd9aa6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items at the start on mobile */
+    padding: 20px; /* Add padding for mobile */
+    min-height: auto; /* Remove minimum height for mobile */
+}
+
+.container {
+    width: 100%; /* Full width of the screen */
+    padding: 10px; /* Less padding on mobile */
+}
+
+/* Navbar */
+#navbar {
+    padding: 10px 0;
+    margin-bottom: 10px; /* Space below the navbar */
+}
+
+#navbar ul {
+    flex-direction: column; /* Stack items vertically */
+    padding: 0;
+}
+
+/* Main Content */
+.content-area {
+    flex-direction: column; /* Stack main and photo vertically */
+    width: 100%; /* Full width */
+}
+
+main {
+    width: 100%; /* Full width of the container */
+    margin-bottom: 10px; /* Add space between main content and photo */
+}
+
+.photo-box {
+    width: 100%; /* Make photo box full width */
+    margin-left: 0; /* Remove left margin */
+}
+
+.photo-box img {
+    max-width: 100%; /* Ensure the image fits inside the box */
+    height: auto;
+}
+
+/* Footer */
+footer {
+    padding: 10px;
+    margin-top: 20px;
+}
