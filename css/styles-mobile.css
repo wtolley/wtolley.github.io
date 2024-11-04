@@ -1,4 +1,8 @@
 /* Mobile Styles */
+* {
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
 body {
     font-family: 'Nunito', sans-serif;
     margin: 0;
@@ -8,12 +12,11 @@ body {
     justify-content: center;
     align-items: flex-start; /* Align items at the start on mobile */
     padding: 20px; /* Add padding for mobile */
-    min-height: auto; /* Remove minimum height for mobile */
-    box-sizing: border-box; /* Include padding in width calculations */
 }
 
 .container {
     width: 100%; /* Full width of the screen */
+    max-width: 1200px; /* Set a maximum width for larger screens */
     padding: 10px; /* Less padding on mobile */
 }
 
@@ -32,6 +35,7 @@ body {
 .content-area {
     flex-direction: column; /* Stack main and photo vertically */
     width: 100%; /* Full width */
+    margin-top: 0; /* Remove any margin that might affect layout */
 }
 
 main {
@@ -42,7 +46,7 @@ main {
 .summary {
     width: 100%; /* Ensure summary takes full width */
     text-align: justify; /* Justify text */
-    padding: 0 10px; /* Optional padding */
+    padding: 0 10px; /* Optional padding to prevent touching edges */
 }
 
 .photo-box {
