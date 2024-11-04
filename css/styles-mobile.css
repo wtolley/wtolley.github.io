@@ -8,7 +8,6 @@ body {
     justify-content: center;
     align-items: flex-start; /* Align items at the start on mobile */
     padding: 20px; /* Add padding for mobile */
-    min-height: auto; /* Remove minimum height for mobile */
 }
 
 .container {
@@ -37,14 +36,18 @@ main {
     width: 100%; /* Full width of the container */
     margin-bottom: 10px; /* Add space between main content and photo */
     padding: 10px; /* Add padding inside main */
-    background-color: #403A5B; /* Same background color as in desktop for consistency */
+    background-color: #403A5B; /* Background color */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 }
 
+.summary {
+    text-align: justify; /* Justify text */
+}
+
+/* Photo Box */
 .photo-box {
     width: 100%; /* Make photo box full width */
-    margin-left: 0; /* Remove left margin */
     display: flex; /* Center the image */
     justify-content: center; /* Center horizontally */
 }
@@ -52,7 +55,6 @@ main {
 .photo-box img {
     max-width: 100%; /* Ensure the image fits inside the box */
     height: auto;
-    border-radius: 0%; /* Remove circular border for mobile */
 }
 
 /* Footer */
