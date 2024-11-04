@@ -30,6 +30,7 @@ body {
 .content-area {
     flex-direction: column; /* Stack main and photo vertically */
     width: 100%; /* Full width */
+    padding: 10px;
 }
 
 main {
