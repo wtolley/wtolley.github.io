@@ -1,6 +1,6 @@
 /* Mobile Styles */
 * {
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
 }
 
 body {
@@ -16,7 +16,7 @@ body {
 
 .container {
     width: 100%; /* Full width of the screen */
-    max-width: 1200px; /* Set a maximum width for larger screens */
+    max-width: 100%; /* Ensure it doesn't exceed 100% */
     padding: 10px; /* Less padding on mobile */
 }
 
@@ -26,27 +26,24 @@ body {
     margin-bottom: 10px; /* Space below the navbar */
 }
 
-#navbar ul {
-    flex-direction: column; /* Stack items vertically */
-    padding: 0;
-}
-
 /* Main Content */
 .content-area {
+    display: flex; /* Allows the main and photo boxes to be side by side */
     flex-direction: column; /* Stack main and photo vertically */
     width: 100%; /* Full width */
-    margin-top: 0; /* Remove any margin that might affect layout */
+    margin-top: 0; /* No margin to prevent shifting */
 }
 
 main {
     width: 100%; /* Full width of the container */
-    margin-bottom: 10px; /* Add space between main content and photo */
+    margin-bottom: 10px; /* Space between main content and photo */
 }
 
 .summary {
     width: 100%; /* Ensure summary takes full width */
     text-align: justify; /* Justify text */
-    padding: 0 10px; /* Optional padding to prevent touching edges */
+    padding: 0 10px; /* Add padding to prevent text from touching edges */
+    overflow-wrap: break-word; /* Prevent overflow by breaking long words */
 }
 
 .photo-box {
