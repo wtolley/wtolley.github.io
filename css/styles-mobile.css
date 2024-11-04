@@ -39,6 +39,7 @@ main {
     background-color: #403A5B; /* Background color */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    overflow: hidden; /* Prevents content overflow */
 }
 
 .summary {
@@ -55,10 +56,15 @@ main {
 .photo-box img {
     max-width: 100%; /* Ensure the image fits inside the box */
     height: auto;
+    border-radius: 10%; /* Optional: add some rounding to the image */
 }
 
 /* Footer */
 footer {
     padding: 10px;
     margin-top: 20px;
+    background-color: #2C2850;
+    color: #A478CB;
+    border-radius: 10px; /* Rounded corners for footer */
+    text-align: center; /* Center text */
 }
