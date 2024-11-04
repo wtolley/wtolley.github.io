@@ -8,6 +8,8 @@ body {
     justify-content: center;
     align-items: flex-start; /* Align items at the start on mobile */
     padding: 20px; /* Add padding for mobile */
+    min-height: auto; /* Remove minimum height for mobile */
+    box-sizing: border-box; /* Include padding in width calculations */
 }
 
 .container {
@@ -30,42 +32,31 @@ body {
 .content-area {
     flex-direction: column; /* Stack main and photo vertically */
     width: 100%; /* Full width */
-    padding: 10px;
 }
 
 main {
     width: 100%; /* Full width of the container */
     margin-bottom: 10px; /* Add space between main content and photo */
-    padding: 10px; /* Add padding inside main */
-    background-color: #403A5B; /* Background color */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-    overflow: hidden; /* Prevents content overflow */
 }
 
 .summary {
+    width: 100%; /* Ensure summary takes full width */
     text-align: justify; /* Justify text */
+    padding: 0 10px; /* Optional padding */
 }
 
-/* Photo Box */
 .photo-box {
     width: 100%; /* Make photo box full width */
-    display: flex; /* Center the image */
-    justify-content: center; /* Center horizontally */
+    margin-left: 0; /* Remove left margin */
 }
 
 .photo-box img {
     max-width: 100%; /* Ensure the image fits inside the box */
     height: auto;
-    border-radius: 10%; /* Optional: add some rounding to the image */
 }
 
 /* Footer */
 footer {
     padding: 10px;
     margin-top: 20px;
-    background-color: #2C2850;
-    color: #A478CB;
-    border-radius: 10px; /* Rounded corners for footer */
-    text-align: center; /* Center text */
 }
