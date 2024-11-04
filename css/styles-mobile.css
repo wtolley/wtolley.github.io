@@ -37,11 +37,16 @@ main {
     box-sizing: border-box; /* Include padding and border in the element's total width */
     margin-bottom: 10px; /* Add space between main content and photo */
     padding: 10px; /* Add some padding to main content */
+    border-top-right-radius: 10px; /* Rounded top-right corner */
+    border-bottom-right-radius: 10px; /* Rounded bottom-right corner */
+    background-color: #403A5B; /* Ensure background color matches */
 }
 
 .photo-box {
     width: 100%; /* Make photo box full width */
     margin-left: 0; /* Remove left margin */
+    border-top-left-radius: 10px; /* Rounded top-left corner */
+    border-bottom-left-radius: 10px; /* Rounded bottom-left corner */
 }
 
 .photo-box img {
