@@ -78,6 +78,7 @@ main {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: justify; /* Justify text */
 }
 
 /* Photo Box */
@@ -120,6 +121,13 @@ footer {
 @media (max-width: 768px) {
     .content-area {
         flex-direction: column; /* Stack main and photo vertically */
+        width: 100%; /* Full width */
+    }
+
+    main {
+        width: 100%; /* Make main section full width */
+        margin-bottom: 10px; /* Add space below main */
+        padding: 10px; /* Adjust padding for mobile */
     }
 
     .photo-box {
@@ -128,7 +136,7 @@ footer {
         width: 100%; /* Make photo box full width */
     }
 
-    main {
-        width: 100%; /* Make main section full width */
+    .photo-box img {
+        max-width: 90%; /* Ensure the image fits nicely on mobile */
     }
 }
