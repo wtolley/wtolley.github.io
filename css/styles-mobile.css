@@ -1,6 +1,6 @@
 /* Mobile Styles */
 * {
-    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    box-sizing: border-box; /* Include padding and border in width and height calculations */
 }
 
 body {
