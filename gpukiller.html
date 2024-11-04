@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Me - William J. Tolley</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="William J. Tolley - Teacher and Researcher">
+    <link rel="icon" href="https://goblin-heart.net/sadgrl/assets/images/fav.gif" type="image/gif">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            background-color: #1E1B2E;
+            color: #bd9aa6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .container {
+            display: flex; /* Enables side-by-side layout */
+            width: 100%;
+            max-width: 1200px; /* Adjusts the overall width */
+            background-color: rgba(41, 40, 77, 0.418);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            z-index: 2;
+            flex-direction: column; /* Column layout for navbar and content */
+        }
+
+        /* Navbar */
+        #navbar {
+            background-color: #2C2850;
+            padding: 10px 0;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px; /* Added for bottom rounding */
+            border-bottom-right-radius: 10px; /* Added for bottom rounding */
+            width: 100%; /* Full width of the container */
+            margin-bottom: 20px; /* Space below the navbar */
+            z-index: 2; /* Ensure it's above the particles */
+            position: relative;
+        }
+
+        #navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            padding: 0;
+            margin: 0;
+        }
+
+        #navbar li {
+            padding: 0 15px;
+        }
+
+        #navbar li a {
+            color: #AA336A;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        #navbar li a:hover {
+            color: #A478CB;
+        }
+
+        /* Main Content */
+        .content-area {
+            display: flex; /* Allows the main and photo boxes to be side by side */
+            width: 100%;
+            margin-top: 10px; /* Small gap between main content and photo box */
+        }
+
+        main {
+            flex: 2; /* Main content is wider */
+            background-color: #403A5B;
+            padding: 20px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Photo Box */
+        .photo-box {
+            flex: 1; /* Photo box is narrower */
+            background-color: #2C2850;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for photo box */
+            margin-left: 10px; /* Small gap between main content and photo box */
+        }
+
+        .photo-box img {
+            max-width: 100%; /* Ensures the image fits inside the box */
+            height: auto;
+            border-radius: 0%; /* Makes the image circular */
+            border: 6px solid #2C2850; /* Adds a border around the image */
+            transition: opacity 0.6s ease-in-out; /* Smooth transition */
+        }
+
+        .photo-box:hover img {
+            content: url('me2.png'); /* Changes the image on hover */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2C2850;
+            color: #A478CB;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+
+<body>
+    <!-- Particles.js Container -->
+    <div id="particles-js"></div>
+
+    <div class="container">
+        <nav id="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Research</a></li>
+                <li><a href="#">Publications</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="content-area">
+            <main>
+                <h1>William J. Tolley</h1>
+                <style>
+                    .summary p {
+                        text-align: justify;
+                    }
+                </style>
+                
+                <div class="summary">
+                    <p>I'm currently a Visiting Assistant Professor of Computer Science at Washington and Lee University and in the final stages of my PhD at Arizona State University. My work is rooted in systems and network security, where I design and analyze privacy-focused technologies and countermeasures against censorship and surveillance. I believe that teaching is more than just passing on knowledge—it’s about immersing students in the kind of problems that challenge them to think deeply, adapt, and create. My approach integrates my research and practical experiences, bridging the gap between theory and impactful application.</p>
+                    <p>I am seeking a tenure-track position at a liberal arts college starting in Fall 2025. My goal is to cultivate an engaging, collaborative space where students become active thinkers and problem-solvers, equipped not just with technical skills but with the mindset to apply them meaningfully in a complex world.</p>
+                </div>
+            </main>
+            <div class="photo-box">
+                <img src="me.png" alt="William J. Tolley">
+            </div>
+        </div>
+    </div>
+
+    <!-- Particles.js Configuration -->
+    <script>
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 1000,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#403A5B"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#ED64F5"
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#AA336A",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    }
+                },
+                "modes": {
+                    "repulse": {
+                        "distance": 100,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
