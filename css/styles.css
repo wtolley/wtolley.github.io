@@ -81,6 +81,10 @@ main {
     text-align: justify; /* Justify text */
 }
 
+.summary {
+    text-align: justify; /* Justifies the text in the summary section */
+}
+
 /* Photo Box */
 .photo-box {
     flex: 1; /* Photo box is narrower */
