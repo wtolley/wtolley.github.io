@@ -1,0 +1,26 @@
+/* Custom styles for the research page */
+
+.publication-list {
+    margin-top: 20px;
+    padding-left: 0;
+}
+
+.publication-item {
+    margin: 15px 0; /* Space between items */
+    color: #E0D7F3; /* Light text color for details */
+}
+
+.publication-title {
+    color: #AA336A; /* Dark pink for publication titles */
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.publication-authors {
+    margin: 5px 0; /* Space below authors */
+}
+
+.publication-link {
+    color: #E0D7F3; /* Color for the link */
+    text-decoration: underline;
+}

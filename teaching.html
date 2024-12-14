@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teaching - William J. Tolley</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Teaching philosophy and methods of William J. Tolley.">
+    <link rel="icon" href="https://goblin-heart.net/sadgrl/assets/images/fav.gif" type="image/gif">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Main CSS -->
+    <link rel="stylesheet" href="css/styles-mobile.css" media="(max-width: 768px)"> <!-- Mobile CSS -->
+    <link rel="stylesheet" href="css/custom-teaching.css"> <!-- Custom styles for teaching page -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        /* Custom styles for the teaching page */
+        .section {
+            margin: 20px 0;
+        }
+        .section h2 {
+            color: #AA336A; /* Dark pink for section headers */
+        }
+        .section p {
+            color: #E0D7F3; /* Light text for paragraph */
+        }
+        .course-item {
+            margin: 10px 0;
+            color: #E0D7F3; /* Light text for course details */
+        }
+        .course-title {
+            color: #AA336A; /* Dark pink for course titles */
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Particles.js Container -->
+    <div id="particles-js"></div>
+
+    <div class="container">
+        <nav id="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>Teaching Philosophy</h1>
+            <div class="section">
+                <p>As a professor, my teaching philosophy is rooted in the belief that education should be inclusive, engaging, and deeply connected to real-world applications. Having come from a low-income background, I understand the barriers that many students face in higher education. This perspective drives my commitment to creating a classroom environment where all students feel valued and empowered to contribute. I emphasize active learning strategies that encourage students to engage with the material, collaborate with their peers, and apply their knowledge in practical contexts.</p>
+                <p>Integrating research topics into my teaching allows students to see the relevance of their studies in addressing contemporary issues. By fostering an environment of exploration and inquiry, I help students develop not only their technical skills but also their critical thinking and problem-solving abilities. This holistic approach aims to prepare students for their future careers in computer science and related fields, ensuring they are ready to make meaningful contributions to society.</p>
+            </div>
+
+            <h2>Courses Taught</h2>
+            <div class="section">
+                <div class="course-item">
+                    <span class="course-title">CSCI 111: Introduction to Computer Science</span><br>
+                    <p>This course provides a foundational introduction to computer science principles and programming. I focus on creating a welcoming environment where students can explore fundamental concepts without intimidation. Through hands-on programming assignments, students learn to think like computer scientists, breaking down complex problems into manageable parts. I emphasize the importance of creativity and critical thinking in computing, allowing students to develop confidence in their skills and see the relevance of computer science in everyday life.</p>
+                </div>
+                <div class="course-item">
+                    <span class="course-title">CSCI 112: Data Structures and Algorithms</span><br>
+                    <p>In this course, I guide students through the essential data structures and algorithms that are the backbone of effective programming. By combining theoretical concepts with practical applications, students learn how to choose the right data structure for different problems, enhancing their programming efficiency and effectiveness. I utilize project-based learning, where students engage in collaborative projects that challenge them to apply their knowledge to real-world scenarios, fostering a deeper understanding of how data structures influence performance and problem-solving.</p>
+                </div>
+                <div class="course-item">
+                    <span class="course-title">CSCI 210: Computer Organization</span><br>
+                    <p>This course dives into how data and instructions are represented and manipulated within a computer. I challenge students to explore beyond surface-level programming, delving into the intricacies of C programming and x86 assembly language. Hands-on labs allow students to use debuggers and disassemblers to analyze binaries and understand low-level program behavior. This practical, problem-solving approach encourages critical thinking, pushing students to connect their programming skills with an understanding of the underlying hardware and system performance.</p>
+                </div>
+                <div class="course-item">
+                    <span class="course-title">CSCI 297: Ethical Hacking</span><br>
+                    <p>In CSCI 297, students are immersed in security concepts through practical, hands-on challenges that emphasize ethical considerations in computing. The course covers a range of topics, including the use of anonymity tools and vulnerabilities in secure communication channels. Students engage in a comprehensive final exam that synthesizes their knowledge through a fictional scenario involving compromised systems, which emphasizes the importance of both technical skills and the broader implications of security in society.</p>
+                </div>
+                <div class="course-item">
+                    <span class="course-title">CSCI 402: Linux Systems Design</span><br>
+                    <p>This advanced course challenges students to build their own Linux distributions from scratch, deepening their understanding of operating systems. By engaging in discussions about design decisions, security trade-offs, and software engineering practices, students develop critical project management skills. The course’s collaborative projects foster an environment where each student can contribute uniquely, enhancing their technical skills and their appreciation for the complexity of real-world systems.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Particles.js Configuration -->
+    <script>
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 200,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#403A5B"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#AA336A"
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
+                "line_linked": {
+                    enable: true,
+                    distance: 150,
+                    color: "#AA336A",
+                    opacity: 0.4,
+                    width: 1
+                },
+                "move": {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    }
+                },
+                "modes": {
+                    "repulse": {
+                        "distance": 100,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>

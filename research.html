@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Research - William J. Tolley</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Research overview and publications of William J. Tolley.">
+    <link rel="icon" href="https://goblin-heart.net/sadgrl/assets/images/fav.gif" type="image/gif">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Main CSS -->
+    <link rel="stylesheet" href="css/styles-mobile.css" media="(max-width: 768px)"> <!-- Mobile CSS -->
+    <link rel="stylesheet" href="css/custom-research.css"> <!-- Custom styles for research page -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        /* Custom styles for the research page */
+        .section {
+            margin: 20px 0;
+        }
+        .section h2 {
+            color: #AA336A; /* Dark pink for section headers */
+        }
+        .section p {
+            color: #E0D7F3; /* Light text for paragraph */
+        }
+        .publication-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .publication-item {
+            margin: 15px 0; /* Space between items */
+            color: #E0D7F3; /* Light text for details */
+        }
+        .publication-title {
+            color: #AA336A; /* Dark pink for publication titles */
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Particles.js Container -->
+    <div id="particles-js"></div>
+
+    <div class="container">
+        <nav id="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>Research Overview</h1>
+            <div class="section">
+                <p>My research focuses on the political dimensions of technical systems, specifically exploring issues related to privacy and control, such as censorship circumvention, surveillance, and secure communication methods—an area of study broadly referred to as Internet Freedom. I am particularly interested in how authoritarian governments deploy information controls to limit access to information and how technology can be leveraged to counter these mechanisms. By developing a rigorous understanding of the technical limitations of censorship technologies, I aim to craft practical solutions that empower individuals living under repressive regimes.</p>
+            </div>
+
+            <h2>Current Projects</h2>
+            <div class="section">
+                <p>Details on my current projects include innovative approaches to secure communication and the analysis of existing vulnerabilities in popular systems. For instance, my recent work involves developing methods for the secure dissemination of radio signals and investigating the vulnerabilities of VPN protocols, highlighting the intricate relationship between technical design and political implications.</p>
+            </div>
+
+            <h2>Publications</h2>
+            <ul class="publication-list">
+                <li class="publication-item">
+                    <span class="publication-title">Signal Integrity via Information-Theoretic Constructs</span><br>
+                    <span class="publication-authors">Bajracharya, J., Holden, M., & Tolley, W. J.</span><br>
+                    <span class="publication-details">Under submission. Presented at Washington and Lee University’s SRS poster session.</span>
+                </li>
+                <li class="publication-item">
+                    <span class="publication-title">Blind In/On-Path Attacks and Applications to VPNs</span><br>
+                    <span class="publication-authors">Tolley, W. J., Kujath, B., Khan, M. T., Vallina-Rodriguez, N., & Crandall, J. R.</span><br>
+                    <span class="publication-details">In 30th USENIX Security Symposium (USENIX Security 21).</span>
+                </li>
+                <li class="publication-item">
+                    <span class="publication-title">CVE-2019-14899: Inferring and hijacking VPN-tunneled TCP connections</span><br>
+                    <span class="publication-authors">Tolley, W. J., Kujath, B., & Crandall, J. R.</span><br>
+                    <span class="publication-details"><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14899" class="publication-link">Open Source Security Mailing List</a>.</span>
+                </li>
+                <li class="publication-item">
+                    <span class="publication-title">CVE-2019-9461: Inferring and hijacking VPN-tunneled TCP connections on Android</span><br>
+                    <span class="publication-authors">Tolley, W. J., Kujath, B., & Crandall, J. R.</span><br>
+                    <span class="publication-details"><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9461" class="publication-link">Open Source Security Mailing List and Android Bug Bounty Program</a>.</span>
+                </li>
+                <li class="publication-item">
+                    <span class="publication-title">Understanding VPNs: An End to End Overview</span><br>
+                    <span class="publication-authors">Tolley, W. J., & Khan, M. T.</span><br>
+                    <span class="publication-details">Internet Freedom Festival 2019.</span>
+                </li>
+                <li class="publication-item">
+                    <span class="publication-title">An End to End Analysis of VPN Services</span><br>
+                    <span class="publication-authors">Tolley, W. J., & Khan, M. T.</span><br>
+                    <span class="publication-details">Citizen Lab Summer Institute 2018.</span>
+                </li>
+                <li class="publication-item">
+                    <span class="publication-title">Alice and Bob, who the FOCI are they?: Analysis of end-to-end encryption in the LINE messaging application</span><br>
+                    <span class="publication-authors">Espinoza, A. M., Tolley, W. J., Crandall, J. R., Crete-Nishihata, M., & Hilts, A.</span><br>
+                    <span class="publication-details">In Proceedings of the 7th USENIX Workshop on Free and Open Communications on the Internet.</span>
+                </li>
+            </ul>
+        </main>
+    </div>
+
+    <!-- Particles.js Configuration -->
+    <script>
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 200,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#403A5B"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#AA336A"
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
+                "line_linked": {
+                    enable: true,
+                    distance: 150,
+                    color: "#AA336A",
+                    opacity: 0.4,
+                    width: 1
+                },
+                "move": {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    }
+                },
+                "modes": {
+                    "repulse": {
+                        "distance": 100,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
