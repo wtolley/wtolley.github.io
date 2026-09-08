@@ -32,6 +32,17 @@ body {
     flex-direction: column; /* Column layout for navbar and content */
 }
 
+/* Clip incoming content to the rounded panel while its height animates. */
+.container.is-resizing {
+    overflow: clip;
+    overflow-anchor: none;
+}
+
+.container.is-resizing > #navbar,
+.container.is-resizing > [data-page-content] {
+    flex: none;
+}
+
 /* Navbar */
 #navbar {
     background-color: #2C2850;
@@ -84,6 +95,38 @@ main {
 
 .summary {
     text-align: justify; /* Justifies the text in the summary section */
+}
+
+/* Page content styles stay loaded while navigation swaps the content. */
+.section {
+    margin: 20px 0;
+}
+
+.section h2,
+.course-title {
+    color: #AA336A;
+}
+
+.section p,
+.course-item {
+    color: #E0D7F3;
+}
+
+.course-item {
+    margin: 10px 0;
+}
+
+.course-title {
+    font-weight: bold;
+}
+
+.navigation-status {
+    margin: 0 0 20px;
+    color: #E0D7F3;
+}
+
+[data-page-content] [tabindex="-1"]:focus {
+    outline: none;
 }
 
 /* Photo Box */

@@ -1,6 +1,7 @@
 /* Custom styles for the research page */
 
 .publication-list {
+    list-style-type: none;
     margin-top: 20px;
     padding-left: 0;
 }
