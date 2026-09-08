@@ -32,15 +32,25 @@ body {
     flex-direction: column; /* Column layout for navbar and content */
 }
 
-/* Clip incoming content to the rounded panel while its height animates. */
+/* Keep the inner surfaces fitted to the content height throughout a resize. */
 .container.is-resizing {
     overflow: clip;
     overflow-anchor: none;
 }
 
-.container.is-resizing > #navbar,
+.container.is-resizing > #navbar {
+    flex: none;
+}
+
 .container.is-resizing > [data-page-content] {
     flex: none;
+    min-height: 0;
+    overflow: clip;
+}
+
+.container.is-resizing > .content-area > main {
+    min-height: 0;
+    overflow: clip;
 }
 
 /* Navbar */
@@ -167,6 +177,10 @@ footer {
 
 /* Media Queries for Mobile Responsiveness */
 @media (max-width: 768px) {
+    .container.is-resizing > .content-area > .photo-box {
+        flex: none; /* Let the text box absorb the height change above the photo. */
+    }
+
     .content-area {
         flex-direction: column; /* Stack main and photo vertically */
         width: 100%; /* Full width */
