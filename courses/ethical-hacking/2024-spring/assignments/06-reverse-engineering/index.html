@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment #6 - Reverse Engineering · &#39;Ethical&#39; Hacking - William J. Tolley</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="This course will provide students with the knowledge and skills necessary to defend against cyber threats by thinking and acting like hackers – individuals who discover unintended functionality in computer systems. Students will learn the fundamentals of cybersecurity, network architecture, and common attack vectors, enabling them to identify and patch vulnerabilities in systems and applications. Additionally, they will learn how the same techniques are used by at-risk populations living under authoritarian information controls to circumvent surveillance and censorship mechanisms. Students will gain practical experience in penetration testing, digital forensics, social engineering, and various other ethical hacking techniques, as well as explore real-world attack case studies, all while adhering to strict ethical and legal guidelines.">
+    <link rel="icon" href="https://goblin-heart.net/sadgrl/assets/images/fav.gif" type="image/gif">
+    <link rel="stylesheet" href="../../../../../css/styles.css"> <!-- Main CSS -->
+    <link rel="stylesheet" href="../../../../../css/styles-mobile.css" media="(max-width: 768px)"> <!-- Mobile CSS -->
+    <link rel="stylesheet" href="../../../../../css/custom-research.css">
+    <link rel="stylesheet" href="../../../../../css/courses.css">
+    <script src="../../../../../scripts/navigation.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+
+<body>
+    <!-- Particles.js Container -->
+    <div id="particles-js"></div>
+
+    <div class="container">
+        <nav id="navbar">
+            <ul>
+                <li><a href="../../../../../index.html">Home</a></li>
+                <li><a href="../../../../../about.html">About</a></li>
+                <li><a href="../../../../../research.html">Research</a></li>
+                <li><a href="../../../../../teaching.html" aria-current="page">Teaching</a></li>
+                <li><a href="../../../../../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+<main class="course-page" data-page-content><header class="course-heading"><p class="course-meta">CSCI 297 · Spring 2024<span>Archived course</span></p><h1>&#39;Ethical&#39; Hacking</h1></header><nav class="course-navigation" aria-label="Course navigation"><a href="../../">Course Home</a><a href="../../schedule/">Schedule</a><a href="../../lectures/">Lectures</a><a href="../" aria-current="page">Assignments</a></nav><h2>Assignment #6 - Reverse Engineering</h2><p class="document-date">Posted May 15, 2024 · Due May 21, 2024</p><div class="course-resources"><a href="../../static_files/assignments/CSCI_297E__Ethical_Hacking___Assignment__6.pdf">PDF</a><a href="../../static_files/assignments/assignment6.zip">Files</a></div><div class="course-body"><h3>Assignment 6: Reverse Engineering with GDB</h3>
+<hr>
+<h4>Objective</h4>
+<p>In this assignment, you will reverse engineer a binary executable using GDB to discover a hidden password. The goal is to practice debugging and reverse engineering techniques.</p>
+<hr>
+<h4>Instructions</h4>
+<h5>Tools and Commands</h5>
+<ul>
+<li><p><strong>objdump</strong>: Disassemble the binary to get the assembly code.<br>  &nbsp;&nbsp;
+  <code>objdump -d -M intel assignment6 &gt; assignment6.asm</code></p>
+</li>
+<li><p><strong>GDB</strong>: Debug the binary to inspect its execution.</p>
+</li>
+</ul>
+<h5>Steps</h5>
+<ol>
+<li><p>Start GDB and load the binary:\</p>
+<pre><code class="language-gdb">
+</code></pre>
+</li>
+<li><p>Set a breakpoint at the <code>main</code> function:\</p>
+<pre><code class="language-(gdb)">
+</code></pre>
+</li>
+<li><p>Run the program:\</p>
+<pre><code class="language-(gdb)">
+</code></pre>
+</li>
+<li><p>Disassemble the current function:\</p>
+<pre><code class="language-(gdb)">
+</code></pre>
+</li>
+<li><p>Use GDB commands like <code>disas</code>, <code>info registers</code>, <code>x</code>, and <code>step</code> to analyze the binary and understand its behavior.</p>
+</li>
+</ol>
+<hr>
+<h4>Submission</h4>
+<p>Submit a report detailing the steps you took to reverse engineer the binary and the discovered password.</p>
+<hr>
+<h4>Extra Credit</h4>
+<p>Recreate the binary in the language of your choice.</p>
+</div><p class="course-school">Washington and Lee University</p></main>
+    </div>
+
+    <!-- Particles.js Configuration -->
+    <script>
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 200,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#403A5B"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#ED64F5"
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
+                "line_linked": {
+                    enable: true,
+                    distance: 150,
+                    color: "#AA336A",
+                    opacity: 0.4,
+                    width: 1
+                },
+                "move": {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    }
+                },
+                "modes": {
+                    "repulse": {
+                        "distance": 100,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+
+</html>
