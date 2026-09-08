@@ -15,7 +15,7 @@
     });
     let currentURL = new URL(location.href);
     let pendingRequest;
-    let panelAnimation;
+    let resizeAnimation;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const pages = new Map([[pageKey(currentURL), readPage(document)]]);
     // Cache a detached copy so focus and loading attributes cannot alter it.
@@ -30,32 +30,47 @@
     history.scrollRestoration = 'manual';
 
     function finishResize() {
-        panelAnimation?.cancel();
-        panelAnimation = undefined;
+        resizeAnimation?.cancel();
+        resizeAnimation = undefined;
         container.classList.remove('is-resizing');
     }
 
     function replaceContent(content) {
-        // Start at the visible height, even if a previous resize is still running.
-        const startHeight = getComputedStyle(container).height;
+        // Capture the visible content size before interrupting an earlier resize.
+        const previousContent = container.querySelector(contentSelector);
+        const previousStyle = getComputedStyle(previousContent);
+        const startSize = {
+            height: previousContent.getBoundingClientRect().height,
+            marginTop: previousStyle.marginTop,
+            marginBottom: previousStyle.marginBottom
+        };
         finishResize();
-        container.querySelector(contentSelector).replaceWith(content);
-        const endHeight = getComputedStyle(container).height;
-        if (reducedMotion.matches || !container.animate || startHeight === endHeight) {
+        previousContent.replaceWith(content);
+        const contentStyle = getComputedStyle(content);
+        const endSize = {
+            height: contentStyle.height,
+            marginTop: contentStyle.marginTop,
+            marginBottom: contentStyle.marginBottom
+        };
+        // Main and the home-page wrapper have different padding and box sizing.
+        const boxExtra = content.getBoundingClientRect().height - parseFloat(endSize.height);
+        startSize.height = `${Math.max(0, startSize.height - boxExtra)}px`;
+        if (reducedMotion.matches || !content.animate ||
+            (startSize.height === endSize.height &&
+             startSize.marginTop === endSize.marginTop &&
+             startSize.marginBottom === endSize.marginBottom)) {
             return Promise.resolve();
         }
 
+        // Animate the inner box; the outer panel's natural height follows it exactly.
         container.classList.add('is-resizing');
-        const animation = container.animate([
-            { height: startHeight },
-            { height: endHeight }
-        ], {
+        const animation = content.animate([startSize, endSize], {
             duration: 1200,
             easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
         });
-        panelAnimation = animation;
+        resizeAnimation = animation;
         return animation.finished.catch(() => {}).then(() => {
-            if (panelAnimation === animation) finishResize();
+            if (resizeAnimation === animation) finishResize();
         });
     }
 
