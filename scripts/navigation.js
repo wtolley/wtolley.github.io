@@ -6,18 +6,29 @@
     const contentSelector = ':scope > [data-page-content]';
     if (!container || !container.querySelector(contentSelector)) return;
 
-    const directory = new URL('.', location.href);
-    const pageKey = (url) => url.pathname.replace(/\/$/, '/index.html') + url.search;
-    const readPage = (doc) => ({
-        content: doc.querySelector('.container > [data-page-content]'),
-        title: doc.title,
-        description: doc.querySelector('meta[name="description"]')?.content || ''
+    const siteRoot = new URL('../', document.currentScript.src);
+    // The persistent navbar must keep pointing to the site root after a deep link.
+    container.querySelectorAll('#navbar a[href]').forEach((link) => {
+        link.href = new URL(link.getAttribute('href'), location.href).href;
     });
+    const topLevelPages = new Set(Array.from(container.querySelectorAll('#navbar a[href]'), (link) => new URL(link.href).pathname));
+    const pageKey = (url) => url.pathname.replace(/\/$/, '/index.html') + url.search;
+    function readPage(doc, url) {
+        const content = doc.querySelector('.container > [data-page-content]')?.cloneNode(true);
+        // Imported markup otherwise resolves relative URLs against the *previous* page.
+        content?.querySelectorAll('[href], [src], [poster]').forEach((element) => {
+            for (const attribute of ['href', 'src', 'poster']) {
+                const value = element.getAttribute(attribute);
+                if (value && !value.startsWith('#')) element.setAttribute(attribute, new URL(value, url).href);
+            }
+        });
+        return { content, title: doc.title, description: doc.querySelector('meta[name="description"]')?.content || '' };
+    }
     let currentURL = new URL(location.href);
     let pendingRequest;
     let resizeAnimation;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const pages = new Map([[pageKey(currentURL), readPage(document)]]);
+    const pages = new Map([[pageKey(currentURL), readPage(document, currentURL)]]);
     // Cache a detached copy so focus and loading attributes cannot alter it.
     pages.get(pageKey(currentURL)).content = pages.get(pageKey(currentURL)).content.cloneNode(true);
 
@@ -86,7 +97,10 @@
 
     function updateNavigation() {
         container.querySelectorAll('#navbar a[href]').forEach((link) => {
-            if (pageKey(new URL(link.href)) === pageKey(currentURL)) {
+            const destination = new URL(link.href);
+            const isCoursePage = currentURL.pathname.startsWith(new URL('courses/', siteRoot).pathname);
+            if (pageKey(destination) === pageKey(currentURL) ||
+                (isCoursePage && destination.pathname === new URL('teaching.html', siteRoot).pathname)) {
                 link.setAttribute('aria-current', 'page');
             } else {
                 link.removeAttribute('aria-current');
@@ -125,7 +139,7 @@
                 const response = await fetch(url.href, { signal: request.signal });
                 if (!response.ok) throw new Error('Page request failed');
                 const doc = new DOMParser().parseFromString(await response.text(), 'text/html');
-                page = readPage(doc);
+                page = readPage(doc, new URL(response.url || url.href));
                 if (!page.content) throw new Error('Page content is missing');
                 pages.set(key, page);
             }
@@ -176,7 +190,9 @@
         if (!link || link.hasAttribute('download') ||
             (link.target && link.target !== '_self')) return;
         const url = new URL(link.href);
-        if (url.origin !== location.origin || new URL('.', url).href !== directory.href ||
+        const isCoursePage = url.pathname.startsWith(new URL('courses/', siteRoot).pathname);
+        if (url.origin !== location.origin ||
+            (!topLevelPages.has(url.pathname) && !isCoursePage && url.pathname !== siteRoot.pathname) ||
             (!url.pathname.endsWith('.html') && !url.pathname.endsWith('/'))) return;
 
         if (pageKey(url) === pageKey(currentURL) &&
