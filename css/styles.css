@@ -100,11 +100,14 @@ main {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: justify; /* Justify text */
+    text-align: left; /* Justify text */
 }
 
-.summary {
-    text-align: justify; /* Justifies the text in the summary section */
+.summary p {
+    text-align: justify;
+    text-align-last: left;
+    hyphens: auto;
+    -webkit-hyphens: auto;
 }
 
 /* Page content styles stay loaded while navigation swaps the content. */
